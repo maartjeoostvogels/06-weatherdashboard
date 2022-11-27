@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <header>
+        <h1>Weather Dashboard</h1>
+    </header>
+
+    <main>
+        <aside>
+            <h2>Search for a City:</h2>
+            <form id="search-form">
+                <input id="location" type="text" placeholder="Search for a town, city or postcode">
+                <button id="search">Search</button>
+                <div id="error"></div>
+            </form>
+
+            <hr>
+            <div class="recent-section" id="recent-locations"></div>
+
+            <div class="location-buttons">
+                <button class="location-btn" id="birmingham">Birmingham</button>
+                <button class="location-btn" id="london">London</button>
+                <button class="location-btn" id="nottingham">Nottingham</button>
+                <button class="location-btn" id="sheffield">Sheffield</button>
+                <button class="location-btn" id="manchester">Manchester</button>
+                <button class="location-btn" id="liverpool">Liverpool</button>
+                <button class="location-btn" id="leicester">Leicester</button>
+            </div>
+         </aside>
+
+        <section>
+            <div id="weather">
+                <div class="weather-icon">
+                    <h2 class="weather-location" id="location-name">Enter a location</h2>
+                    <img src="assets/images/cloudy.png" alt="cloudy">
+                </div>
+                <dl class="weather-info">
+                    <dt>Temperature</dt>
+                    <dd id="temperature">-</dd>
+
+                    <dt>Wind Speed</dt>
+                    <dd id="wind-speed">-</dd>
+
+                    <dt>Humidity</dt>
+                    <dd id="humidity">-</dd>
+
+                    <dt>UV Index</dt>
+                    <dd id="uv-index">-</dd>
+                </dl>
+            </div>
+
+            <div id="forecast" class="forecast-days"></div>
+        </section>
+    </main>
+
+</body>
+</html>
