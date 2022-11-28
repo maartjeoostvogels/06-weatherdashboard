@@ -102,9 +102,9 @@ const displayWeatherForecast = (weatherData) => {
         const dailyForecast = dailyData[i];
         console.log('Daily Forecast', dailyForecast);
         const day = new Date(dailyForecast.dt * 1000).toLocaleDateString('en-GB', {dateStyle: 'short'});
-        const temp = `${dailyForecast.temp.day} °F`;
-        const humidity = `${dailyForecast.humidity} %`;
-        const wind = `${dailyForecast.wind_speed} MPH`;
+        const temp = `${dailyForecast.temp.day}&nbsp;°F`;
+        const humidity = `${dailyForecast.humidity}&nbsp;%`;
+        const wind = `${dailyForecast.wind_speed}&nbsp;MPH`;
 
         const newForecast = document.createElement('div');
         newForecast.classList.add('forecast-day');
