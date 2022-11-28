@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -25,31 +26,22 @@
 
             <div class="recent-section">
                 <h3>Recent locations</h3>
-                <ul class="recent-section" id="recent-locations"></ul>
-            </div>
-
-            <div class="location-buttons">
-                <button class="location-btn" id="birmingham">Birmingham</button>
-                <button class="location-btn" id="london">London</button>
-                <button class="location-btn" id="nottingham">Nottingham</button>
-                <button class="location-btn" id="sheffield">Sheffield</button>
-                <button class="location-btn" id="manchester">Manchester</button>
-                <button class="location-btn" id="liverpool">Liverpool</button>
-                <button class="location-btn" id="leicester">Leicester</button>
+                <ul id="recent-locations"></ul>
             </div>
          </aside>
 
         <section>
             <div id="weather">
-                <div class="weather-icon">
+                <div class="weather-header">
                     <h2 class="weather-location" id="location-name">Enter a location</h2>
-                    <img src="assets/images/cloudy.png" alt="cloudy">
+                    <span class="weather-date"></span>
+                    <span class="weather-icon"></span>
                 </div>
                 <dl class="weather-info">
-                    <dt>Temperature</dt>
+                    <dt>Temp</dt>
                     <dd id="temperature">-</dd>
 
-                    <dt>Wind Speed</dt>
+                    <dt>Wind</dt>
                     <dd id="wind-speed">-</dd>
 
                     <dt>Humidity</dt>

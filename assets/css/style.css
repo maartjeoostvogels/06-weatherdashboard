@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+}
+
+header {
+    background: #4949c3;
+    background: linear-gradient(90deg, #4949c3 0%, #050058 100%);
+    color: #ffffff;
+    text-align: center;
+    padding: 0.1rem;
+    margin-bottom: 1rem;
+}
+
+header h1 {
+    margin: 0.5rem 0;
+}
+
+main {
+    display: flex;
+    flex: 1;
+}
+
+aside {
+    margin-right: 2rem;
+}
+
+aside h2 {
+    margin-bottom: 0.2rem;
+    font-size: 1.3em;
+}
+
+section {
+    width: 100%;
+}
+
+/* Location input text */
+#location {
+    padding: 0.5rem;
+    font-size: 1.1em;
+    border: 1px solid #999999;
+    border-radius: 0.3rem;
+    width: 300px;
+}
+
+/* Search button */
+#search {
+    display: block;
+    background: cornflowerblue;
+    border: none;
+    border-radius: 0.3rem;
+    color: #ffffff;
+    font-size: 1em;
+    width: 100%;
+    padding: 0.6rem;
+    margin: 0.6rem 0;
+}
+
+/* Recent Locations */
+.recent-section h3 {
+    display: none;
+}
+
+#recent-locations {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.recent {
+    background: #999999;
+    border-radius: 0.3rem;
+    text-align: center;
+    padding: 0.6rem;
+    margin: 0.6rem 0;
+}
+
+/* Current Weather */
+#weather {
+    border: 1px solid #999999;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+#weather h2,
+.weather-date {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 0;
+    margin-right: 0.5rem;
+    line-height: 42px;
+}
+
+.weather-header {
+    display: flex;
+}
+
+.weather-icon img {
+    width: 42px;
+    height: 42px;
+}
+
+
+.weather-info dt {
+    display: inline-block;
+    min-width: 75px;
+    margin-bottom: 0.8rem;
+}
+
+.weather-info dt:after {
+    content: ':';
+}
+
+.weather-info dd {
+    display: inline;
+    margin: 0;
+}
+
+.weather-info dd:after {
+    display: block;
+    content: '';
+}
+
+/* Forecast Days */
+.forecast-days {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.forecast-days h3 {
+    font-size: 1.2em;
+    width: 100%;
+ }
+
+.forecast-day {
+    background: #06224f;
+    color: #ffffff;
+    padding: 1rem;
+    margin-right: 1rem;
+    flex: 1;
+}
+
+.forecast-day:last-child {
+    margin-right: 0;
+}
+
+.forecast-day h4 {
+    margin-top: 0;
+    font-size: 1.1em;
+}

@@ -81,40 +81,43 @@ const lookupLocation = (search) => {
 
 const displayCurrentWeather = (weatherData) => {
     const currentWeather = weatherData.current;
+    console.log('Current Weather', currentWeather);
     const formattedDate = new Date(currentWeather.dt * 1000).toLocaleDateString('en-GB', {dateStyle: 'short'});
 
-    document.getElementById('location-name').textContent += ` (${formattedDate})`;
-    document.getElementById('temperature').textContent = `${currentWeather.temp}*`;
-    document.getElementById('wind-speed').textContent = `${currentWeather.wind_speed}MPH`;
-    document.getElementById('humidity').textContent = `${currentWeather.humidity}%`;
+    document.querySelector('.weather-icon').innerHTML = `<img src="http://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png">`;
+    document.querySelector('.weather-date').textContent = `(${formattedDate})`;
+    document.getElementById('temperature').textContent = `${currentWeather.temp} °F`;
+    document.getElementById('wind-speed').textContent = `${currentWeather.wind_speed} MPH`;
+    document.getElementById('humidity').textContent = `${currentWeather.humidity} %`;
     document.getElementById('uv-index').textContent = `${currentWeather.uvi}`;
 }
 
 const displayWeatherForecast = (weatherData) => {
     const dailyData = weatherData.daily;
 
-    document.getElementById('forecast').style.display = 'block';
-
     const forecastList = document.getElementById('forecast');
-    forecastList.innerHTML = '';
+    forecastList.innerHTML = '<h3>5-Day Forecast</h3>';
 
     for (let i = 0; i < MAX_DAILY_FORECAST; i++) {
         const dailyForecast = dailyData[i];
+        console.log('Daily Forecast', dailyForecast);
         const day = new Date(dailyForecast.dt * 1000).toLocaleDateString('en-GB', {dateStyle: 'short'});
-        const temp = `${dailyForecast.temp.day} *`;
+        const temp = `${dailyForecast.temp.day} °F`;
         const humidity = `${dailyForecast.humidity} %`;
         const wind = `${dailyForecast.wind_speed} MPH`;
 
         const newForecast = document.createElement('div');
         newForecast.classList.add('forecast-day');
         newForecast.innerHTML = `
-            <h3 class="date">${day}</h3>
+            <h4 class="date">${day}</h4>
+
+            <img src="http://openweathermap.org/img/wn/${dailyForecast.weather[0].icon}@2x.png" width="60px" height="60px">
 
             <dl class="weather-info">
-                <dt>Temperature</dt>
+                <dt>Temp</dt>
                 <dd>${temp}</dd>
 
-                <dt>Wind Speed</dt>
+                <dt>Wind</dt>
                 <dd>${wind}</dd>
 
                 <dt>Humidity</dt>
@@ -141,18 +144,9 @@ const displayWeather = (weatherData) => {
     getWeather(weatherData.lat, weatherData.lon);
 }
 
-const onClickLocationButton = (event) => {
-    event.preventDefault();
-    const location = event.target.id;
-    console.log(`Looking up predefined location ${location}`);
-    lookupLocation(location);
-}
-
 const locationInput = document.getElementById('location');
 const searchForm = document.getElementById('search-form');
-const locationButtons = document.querySelectorAll('.location-btn');
 
 searchForm.addEventListener('submit', onSubmitSearchForm);
-locationButtons.forEach(element => element.addEventListener('click', onClickLocationButton));
 
 loadRecentLocations();
