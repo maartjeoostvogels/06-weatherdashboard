@@ -54,6 +54,7 @@ section {
     width: 100%;
     padding: 0.6rem;
     margin: 0.6rem 0;
+    cursor: pointer;
 }
 
 /* Recent Locations */
@@ -73,6 +74,20 @@ section {
     text-align: center;
     padding: 0.6rem;
     margin: 0.6rem 0;
+    cursor: pointer;
+}
+
+.clear-recents {
+    background-color: #eee;
+    border: none;
+    border-radius: 0.3rem;
+    text-align: center;
+    font-size: 1em;
+    padding: 0.6rem;
+    margin: 0.6rem 0;
+    display: block;
+    width: 100%;
+    cursor: pointer;
 }
 
 /* Current Weather */

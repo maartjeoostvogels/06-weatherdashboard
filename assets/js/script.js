@@ -2,7 +2,7 @@ const WEATHER_API_BASE_URL = 'https://api.openweathermap.org';
 const WEATHER_API_KEY = '707c8398dd088c4758c51be5e6996e2b';
 const MAX_DAILY_FORECAST = 5;
 
-const recentLocations = [];
+let recentLocations = [];
 
 const onSubmitSearchForm = (event) => {
     event.preventDefault();
@@ -47,14 +47,27 @@ const updateRecentLocationsList = () => {
 
         recentLocationsList.appendChild(newLocation);
     });
+    if (recentLocations.length > 0) {
+    const clearLocation = document.createElement('button');
+    clearLocation.classList.add('clear-recents');
+    clearLocation.textContent = 'Clear Recent Locations';
+    clearLocation.addEventListener('click', onClickClearLocation);
+    recentLocationsList.appendChild(clearLocation);
+    }
+}
+
+const onClickClearLocation = () => {
+    localStorage.clear();
+    recentLocations = [];
+    loadRecentLocations();
 }
 
 const loadRecentLocations = () => {
     const locations = localStorage.getItem('recentLocations');
     if (locations) {
         recentLocations.push(...JSON.parse(locations));
-        updateRecentLocationsList();
     }
+    updateRecentLocationsList();
 }
 
 const onClickRecentLocation = (event) => {
