@@ -21,4 +21,4 @@ WHEN I click on a city in the search history<br />
 THEN I am again presented with current and future conditions for that city<br />
 
 ## Screenshot
-![Screenshot of Weather Dashboard](./assets/images/screenshot.png)
+![Screenshot of Weather Dashboard](../assets/images/screenshot.png)
